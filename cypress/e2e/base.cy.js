@@ -1,4 +1,0 @@
-describe ("DEMO QA", () => {
-})
-  
-  
