@@ -1,5 +1,4 @@
 import { webTables } from "../Pages/WebTables";
-import { LOCATORS } from "../utils/data";
 import { generateRandomName } from "../utils/function";
 import { generateRandomNum } from "../utils/function";
 
@@ -27,7 +26,7 @@ describe("Web Tables", () => {
     cy.get(webTables.LOCATORS.table).should("be.visible");
     cy.get(webTables.LOCATORS.content).should("be.visible").and("have.length", 7);
   });
-  it("Should add/edit/delete a row", () => {
+  it("Should add/edit/delete/search a row", () => {
     cy.contains(webTables.NAMES.webTablesLink).click();
     cy.get(webTables.LOCATORS.addButton).click();
     cy.get(webTables.LOCATORS.firstName).type(randomName);
