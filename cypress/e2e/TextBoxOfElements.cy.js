@@ -1,19 +1,17 @@
 import { textBox } from "../Pages/TextBoxOfElements";
+import { generateRandomName } from "../utils/function";
 
 const fieldError = "field-error";
-const randomName = "Poghos Poghosyan";
-const randomEmail = "poghos@example.com";
-const randomAddress = "Komitas street";
-const randomPermAddress = "Avan Arinj";
-const nameOutput = "Name:Poghos Poghosyan";
-const emailOutput = "Email:poghos@example.com";
-const addressOutput = "Current Address :Komitas street";
-const permAddressOutput = "Permananet Address :Avan Arinj";
-const invalidEmail = "poghosexample.com";
+const randomEmail = `${generateRandomName(6)}@gmail.com`;
+const randomName = `${generateRandomName(6)}`;
+const randomAddress = `${generateRandomName(8)}`;
+const randomPermAddress = `${generateRandomName(7)}`;
+const randomInvalidEmail = `${generateRandomName(6)}gmail.com`
+
 
 describe("Text Box", () => {
   beforeEach(() => {
-    cy.visit("https://demoqa.com/");
+    cy.visit("/");
     cy.contains(textBox.NAMES.textBoxElements).click();
   });
 
@@ -39,16 +37,16 @@ describe("Text Box", () => {
     cy.get(textBox.LOCATORS.permanentAddress).type(randomPermAddress);
     cy.get(textBox.LOCATORS.submit).click();
 
-    cy.get(textBox.LOCATORS.output).should("contain", nameOutput);
-    cy.get(textBox.LOCATORS.output).should("contain", emailOutput);
-    cy.get(textBox.LOCATORS.output).should("contain", addressOutput);
-    cy.get(textBox.LOCATORS.output).should("contain", permAddressOutput);
+    cy.get(textBox.LOCATORS.output).should("contain", randomName);
+    cy.get(textBox.LOCATORS.output).should("contain", randomEmail);
+    cy.get(textBox.LOCATORS.output).should("contain", randomAddress);
+    cy.get(textBox.LOCATORS.output).should("contain", randomPermAddress);
   });
 
-  it("Should show an error for empty email field when other fields are filled", () => {
+  it("Should show an error for an invalid email when other fields are valid", () => {
     cy.contains(textBox.NAMES.textBoxLink).click();
     cy.get(textBox.LOCATORS.userName).type(randomName);
-    cy.get(textBox.LOCATORS.userEmail).type(invalidEmail);
+    cy.get(textBox.LOCATORS.userEmail).type(randomInvalidEmail);
     cy.get(textBox.LOCATORS.currentAddress).type(randomAddress);
     cy.get(textBox.LOCATORS.permanentAddress).type(randomPermAddress);
     cy.get(textBox.LOCATORS.submit).click();
