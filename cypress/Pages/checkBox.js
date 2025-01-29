@@ -21,6 +21,8 @@ class CheckBox {
     fileTitleGeneral: "General",
     fileTitleWord: "Word File.doc",
     fileTitleExcel: "Excel File.doc",
+    selectedAllText:
+      "You have selected :homedesktopnotescommandsdocumentsworkspacereactangularveuofficepublicprivateclassifiedgeneraldownloadswordFileexcelFile",
   };
 
   LOCATORS = {
@@ -30,45 +32,33 @@ class CheckBox {
     dropdownNearHome: ".rct-collapse",
     childFolderDesktop:
       ".rct-node-expanded > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    childFolderDocuments:
-      ".rct-node-expanded > ol > :nth-child(2) > .rct-text > label > .rct-title",
-    childFolderDownloads:
-      ".rct-node-expanded > ol > :nth-child(3) > .rct-text > label > .rct-title",
-    dropdownNearDesktop:
+      dropdownNearDesktop:
       ".rct-node-expanded > ol > :nth-child(1) > .rct-text > .rct-collapse",
     fileNotes:
       ":nth-child(2) > :nth-child(1) > :nth-child(2) > .rct-node-expanded > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    fileCommands:
-      ":nth-child(2) > :nth-child(1) > :nth-child(2) > .rct-node-expanded > ol > :nth-child(2) > .rct-text > label > .rct-title",
     dropdownNearDocuments:
       ".rct-node-expanded > ol > :nth-child(2) > .rct-text > .rct-collapse",
     childFolderWorkSpace:
       ":nth-child(2) > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    childFolderOffice:
-      ":nth-child(2) > ol > :nth-child(2) > .rct-text > label > .rct-title",
     dropdownNearWorkSpace:
       ":nth-child(2) > ol > :nth-child(1) > .rct-text > .rct-collapse",
     fileReact:
       ":nth-child(2) > :nth-child(2) > .rct-node-expanded > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    fileAngular:
-      ":nth-child(2) > :nth-child(2) > .rct-node-expanded > ol > :nth-child(2) > .rct-text > label > .rct-title",
-    fileVeu:
-      ":nth-child(2) > :nth-child(2) > .rct-node-expanded > ol > :nth-child(3) > .rct-text > label > .rct-title",
     dropdownNearOffice:
       ":nth-child(2) > ol > :nth-child(2) > .rct-text > .rct-collapse",
     filePublic:
       ":nth-child(2) > :nth-child(2) > :nth-child(2) > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    filePrivate:
-      ":nth-child(2) > :nth-child(2) > :nth-child(2) > ol > :nth-child(2) > .rct-text > label > .rct-title",
-    fileClassified:
-      ":nth-child(2) > :nth-child(2) > :nth-child(2) > ol > :nth-child(3) > .rct-text > label > .rct-title",
-    fileGeneral:
-      ":nth-child(2) > :nth-child(2) > :nth-child(2) > ol > :nth-child(4) > .rct-text > label > .rct-title",
     dropdownNearDownloads: ":nth-child(3) > .rct-text > .rct-collapse",
     fileWord:
       ":nth-child(3) > ol > :nth-child(1) > .rct-text > label > .rct-title",
     fileExcel:
       ":nth-child(3) > ol > :nth-child(2) > .rct-text > label > .rct-title",
+    checkbox: ".rct-checkbox",
+    expandAllButton: ".rct-option-expand-all",
+    checkedIconState: ".rct-icon-check",
+    resultAfterCheckingAll: "#result",
+    collapseAllButton: ".rct-option-collapse-all",
+    expandedNodeState: "rct-node-expanded",
   };
 }
 
