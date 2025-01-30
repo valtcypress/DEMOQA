@@ -1,7 +1,7 @@
 import { basePage } from "../Pages/basePage";
 import { checkBox } from "../Pages/checkBox";
 
-describe("DEMO QA Base Page", () => {
+describe("DEMO QA Check Box Page", () => {
   beforeEach(() => {
     cy.visit("/");
     cy.contains(basePage.NAMES.elementsCategoryCardTitle).click();
