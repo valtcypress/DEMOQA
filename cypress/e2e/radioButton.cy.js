@@ -21,31 +21,44 @@ describe("DEMO QA Radio Button Page", () => {
       "Do you like the site?"
     );
     cy.get(radioButton.LOCATORS.radioButtonType).should("have.length", 3); // Check total radio buttons
-    cy.contains("label", radioButton.LOCATORS.labelYes).should("be.visible"); // Ensure label is visible
-    cy.contains("label", radioButton.LOCATORS.labelImpressive).should(
+    cy.contains("label", radioButton.NAMES.radioButtonYes).should("be.visible"); // Ensure label is visible
+    cy.contains("label", radioButton.NAMES.radioButtonImpressive).should(
       "be.visible"
     );
-    cy.contains("label", radioButton.LOCATORS.labelNo).should("be.visible");
+    cy.contains("label", radioButton.NAMES.radioButtonNo).should("be.visible");
 
-    const options = ["Yes", "Impressive"];
+    const options = [
+      radioButton.NAMES.radioButtonYes,
+      radioButton.NAMES.radioButtonImpressive,
+    ];
     options.forEach((option) => {
       cy.contains("label", option).click(); // Clicks the radio button label
-      cy.get(".mt-3").should("contain", `You have selected ${option}`); // Verifies the displayed text
+      cy.get(radioButton.LOCATORS.yourSelectedOption).should(
+        "contain",
+        `You have selected ${option}`
+      ); // Verifies the displayed text
     });
 
-    cy.contains("label", "No") // verifies no radio button is disabled
+    cy.contains("label", radioButton.NAMES.radioButtonNo) // verifies no radio button is disabled
       .parent()
       .find("input")
       .should("be.disabled");
 
-    cy.contains("label", "Yes").click();
-    cy.get('input[type="radio"]').should("not.have.attr", "checked", "checked"); // Ensure only one is checked
+    cy.contains("label", radioButton.NAMES.radioButtonYes).click();
+    cy.get(radioButton.LOCATORS.radioButtonType).should(
+      "not.have.attr",
+      "checked",
+      "checked"
+    ); // verify only one is checked
 
-    cy.contains("label", "Impressive").click();
-    cy.contains("label", "Yes").parent().find("input").should("not.be.checked"); // Ensure "Yes" is unchecked
-    cy.contains("label", "Impressive")
+    cy.contains("label", radioButton.NAMES.radioButtonImpressive).click();
+    cy.contains("label", radioButton.NAMES.radioButtonYes)
       .parent()
       .find("input")
-      .should("be.checked"); // Ensure "Impressive" is checked
+      .should("not.be.checked"); // verify "Yes" is unchecked
+    cy.contains("label", radioButton.NAMES.radioButtonImpressive)
+      .parent()
+      .find("input")
+      .should("be.checked"); // verify "Impressive" is checked
   });
 });
