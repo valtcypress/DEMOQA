@@ -12,7 +12,7 @@ describe("DEMO QA Radio Button Page", () => {
   });
 
   it("verifies three radio buttons on the page", () => {
-    cy.get(radioButton.LOCATORS.h1TitleRadioButton).should(
+    radioButton.h1TitleRadioButton().should(
       "contain",
       radioButton.NAMES.radioButtonPageTitle
     );

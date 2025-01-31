@@ -8,14 +8,15 @@ class RadioButton {
   };
 
   LOCATORS = {
-    radioButtonOnPanel: "Radio Button",
-    radioButtonPageTitle: "Radio Button",
     h1TitleRadioButton: ".text-center",
     doYouLikeTheSite: ".mb-3",
     radioButtonType: 'input[type="radio"]',
     testAfterButtonCheck: ".text-success",
     yourSelectedOption: ".mt-3",
   };
+  h1TitleRadioButton(){
+    return cy.get(".text-center")
+  }
 }
 
 export const radioButton = new RadioButton();
