@@ -21,7 +21,7 @@ describe("DEMO QA Upload and Download Page", () => {
 });
 
   it.only("uploads a file", () => {
-    // uploadAndDownload.uploadButton().should("contain", uploadAndDownload.NAMES.uploadButtonTitle);
+    uploadAndDownload.uploadButton().should("contain", uploadAndDownload.NAMES.uploadButtonTitle);
     uploadAndDownload.uploadButton().attachFile('exampleFile.pdf');
 
     // Validate that the file was uploaded (depends on your app's specific response)
