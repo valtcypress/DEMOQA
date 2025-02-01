@@ -25,3 +25,5 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 // require('cypress-downloadfile/lib/downloadFileCommand')
 import 'cypress-downloadfile/lib/downloadFileCommand';
+require('cypress-downloadfile/lib/downloadFileCommand')
+import 'cypress-file-upload';

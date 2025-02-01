@@ -30,7 +30,7 @@ describe("DEMO QA Buttons Page", () => {
       .rightClickMessage()
       .should("contain", buttons.NAMES.rightClickResultText);
 
-    cy.get("button").eq(3).click(); // right click button functionality (workaround)
+    cy.get(".btn-primary").last().click()
     buttons.clickMessage().should("contain", buttons.NAMES.clickResultText);
   });
 });
