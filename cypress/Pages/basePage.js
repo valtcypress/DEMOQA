@@ -9,7 +9,6 @@ class BasePage {
   };
 
   LOCATORS = {
-    categoryCards: ".category-cards",
     elementsPageUrlPath: "/elements",
     formsPageUrlPath: "/forms",
     alertsPageUrlPath: "/alertsWindows",
@@ -17,6 +16,10 @@ class BasePage {
     interactionsPageUrlPath: "/interaction",
     booksPageUrlPath: "/books",
   };
+
+  categoryCards() {
+    return cy.get(".category-cards");
+  }
 }
 
 export const basePage = new BasePage();
