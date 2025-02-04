@@ -1,5 +1,3 @@
-import { file } from "tmp";
-
 class CheckBox {
   NAMES = {
     checkBoxOnPanel: "Check Box",

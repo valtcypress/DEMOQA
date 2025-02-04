@@ -54,10 +54,12 @@
     "common-tags": "^1.8.2",
     "core-util-is": "^1.0.2",
     "cross-spawn": "^7.0.6",
+    "cypress-file-upload": "^5.0.8",
     "dashdash": "^1.14.1",
     "dayjs": "^1.11.13",
     "debug": "^4.4.0",
     "delayed-stream": "^1.0.0",
+    "download": "^8.0.0",
     "dunder-proto": "^1.0.1",
     "ecc-jsbn": "^0.1.2",
     "emoji-regex": "^8.0.0",
@@ -93,6 +95,7 @@
     "http-signature": "^1.4.0",
     "human-signals": "^1.1.1",
     "ieee754": "^1.2.1",
+    "image-downloader": "^4.3.0",
     "indent-string": "^4.0.0",
     "ini": "^2.0.0",
     "is-fullwidth-code-point": "^3.0.0",
@@ -178,6 +181,6 @@
     "wrappy": "^1.0.2",
     "yauzl": "^2.10.0"
   },
-  "description": "",
+  "description": "<<<<<<< HEAD\r # cypressBDG\"# DEMOQA\" \r =======\r # DEMOQA\r This is a demoqa site automation project by a few cypress enthusiasts.\r >>>>>>> 8b0781bc2f5d35c80b38331fce0b98648ce4633a",
   "keywords": []
 }
