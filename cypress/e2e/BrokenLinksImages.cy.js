@@ -24,11 +24,6 @@ describe("BrokenLinks", () => {
     cy.get(brokenLinks.LOCATORS.colMd6).find(img).first().should("have.attr", src, img1).and("be.visible");
     cy.get(brokenLinks.LOCATORS.colMd6).find(img).eq(1).should("have.attr", src, img2);
     cy.get(brokenLinks.LOCATORS.colMd6).find(img).eq(1).should("have.value","")   
-    //cy.get(brokenLinks.LOCATORS.colMd6).find(ahref).first().should("have.text", "Click Here for Valid Link").click()
-    // cy.url().should("include", brokenLinks.NAMES.brokenLinksLinkName);
-    // cy.get(brokenLinks.LOCATORS.colMd6).find(ahref).eq(1).should("have.text", "Click Here for Broken Link").click()
-    // cy.url().should("include","/status_codes/500")
-
-    ////DOES NOT LOAD THE PAGE !!!
+ 
 })
 })
