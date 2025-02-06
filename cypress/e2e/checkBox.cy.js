@@ -1,4 +1,4 @@
-// import { basePage } from "../Pages/basePage";
+import { basePage } from "../Pages/basePage";
 import { checkBox } from "../Pages/checkBox";
 
 describe("DEMO QA Check Box Page", () => {
