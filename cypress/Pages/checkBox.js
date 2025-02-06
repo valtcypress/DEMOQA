@@ -1,5 +1,3 @@
-import { file } from "tmp";
-
 class CheckBox {
   NAMES = {
     checkBoxOnPanel: "Check Box",
@@ -25,36 +23,28 @@ class CheckBox {
       "You have selected :homedesktopnotescommandsdocumentsworkspacereactangularveuofficepublicprivateclassifiedgeneraldownloadswordFileexcelFile",
   };
 
+  listOfElements(){
+    return cy.get (".element-list")
+  }
+
+  generalCheckBoxClass(){
+    return cy.get (".rct-title")
+  }
+
+  dropdownIcon(){
+    return cy.get (".rct-collapse-btn")
+  }
+
+  expandAllButton(){
+    return cy.get(".rct-option-expand-all")
+  }
+  checkbox(){
+return cy.get(".rct-checkbox")
+  }
+
   LOCATORS = {
-    listOfElements: ".element-list",
-    folderHome:
-      "#tree-node > :nth-child(2) > :nth-child(1) > :nth-child(1) > label > .rct-title",
-    dropdownNearHome: ".rct-collapse",
-    childFolderDesktop:
-      ".rct-node-expanded > ol > :nth-child(1) > .rct-text > label > .rct-title",
-      dropdownNearDesktop:
-      ".rct-node-expanded > ol > :nth-child(1) > .rct-text > .rct-collapse",
-    fileNotes:
-      ":nth-child(2) > :nth-child(1) > :nth-child(2) > .rct-node-expanded > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    dropdownNearDocuments:
-      ".rct-node-expanded > ol > :nth-child(2) > .rct-text > .rct-collapse",
-    childFolderWorkSpace:
-      ":nth-child(2) > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    dropdownNearWorkSpace:
-      ":nth-child(2) > ol > :nth-child(1) > .rct-text > .rct-collapse",
-    fileReact:
-      ":nth-child(2) > :nth-child(2) > .rct-node-expanded > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    dropdownNearOffice:
-      ":nth-child(2) > ol > :nth-child(2) > .rct-text > .rct-collapse",
-    filePublic:
-      ":nth-child(2) > :nth-child(2) > :nth-child(2) > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    dropdownNearDownloads: ":nth-child(3) > .rct-text > .rct-collapse",
-    fileWord:
-      ":nth-child(3) > ol > :nth-child(1) > .rct-text > label > .rct-title",
-    fileExcel:
-      ":nth-child(3) > ol > :nth-child(2) > .rct-text > label > .rct-title",
-    checkbox: ".rct-checkbox",
-    expandAllButton: ".rct-option-expand-all",
+    
+
     checkedIconState: ".rct-icon-check",
     resultAfterCheckingAll: "#result",
     collapseAllButton: ".rct-option-collapse-all",

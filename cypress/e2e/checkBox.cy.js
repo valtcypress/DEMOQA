@@ -1,62 +1,61 @@
-import { basePage } from "../Pages/basePage";
+// import { basePage } from "../Pages/basePage";
 import { checkBox } from "../Pages/checkBox";
 
-describe("DEMO QA Base Page", () => {
+describe("DEMO QA Check Box Page", () => {
   beforeEach(() => {
-    cy.visit("/");
-    cy.contains(basePage.NAMES.elementsCategoryCardTitle).click();
-    cy.get(checkBox.LOCATORS.listOfElements)
-      .contains(checkBox.NAMES.checkBoxOnPanel)
-      .click();
+    cy.visit("/checkbox");
+    // cy.contains(basePage.NAMES.elementsCategoryCardTitle).click();
+    // checkBox.listOfElements()
+    //   .contains(checkBox.NAMES.checkBoxOnPanel)
+    //   .click();
+    cy.viewport(1000, 400)
   });
 
   it("verifies all Check Box elements on the page", () => {
-    cy.get(checkBox.LOCATORS.folderHome).should(
-      "contain",
-      checkBox.NAMES.folderTitleHome
-    );
-    cy.get(checkBox.LOCATORS.dropdownNearHome).click();
-    cy.get(checkBox.LOCATORS.childFolderDesktop).should(
+  checkBox.generalCheckBoxClass().should(
+    "contain", checkBox.NAMES.folderTitleHome)
+
+   checkBox.dropdownIcon().click();
+   checkBox.generalCheckBoxClass().should(
       "contain",
       checkBox.NAMES.folderTitleDesktop,
       checkBox.NAMES.folderTitleDocuments,
       checkBox.NAMES.folderTitleDownloads
     );
 
-    cy.get(checkBox.LOCATORS.dropdownNearDesktop).click();
-    cy.get(checkBox.LOCATORS.fileNotes).should(
+    checkBox.dropdownIcon().eq(1).click();
+    checkBox.generalCheckBoxClass().should(
       "contain",
       checkBox.NAMES.fileTitleNotes,
       checkBox.NAMES.fileTitleCommands
     );
 
-    cy.get(checkBox.LOCATORS.dropdownNearDocuments).click({ multiple: true });
-    cy.get(checkBox.LOCATORS.childFolderWorkSpace).should(
+    checkBox.dropdownIcon().eq(2).click();
+    checkBox.generalCheckBoxClass().should(
       "contain",
       checkBox.NAMES.folderTitleWorkSpace,
       checkBox.NAMES.folderTitleOffice
     );
 
-    cy.get(checkBox.LOCATORS.dropdownNearWorkSpace).click({ multiple: true });
-    cy.get(checkBox.LOCATORS.fileReact).should(
+    checkBox.dropdownIcon().eq(3).click();
+    checkBox.generalCheckBoxClass().should(
       "contain",
       checkBox.NAMES.fileTitleReact,
       checkBox.NAMES.fileTitleAngular,
       checkBox.NAMES.fileTitleVeu
     );
 
-    cy.get(checkBox.LOCATORS.dropdownNearOffice).click({ multiple: true });
-    cy.get(checkBox.LOCATORS.filePublic).should(
+    checkBox.dropdownIcon().eq(4).click();
+    checkBox.generalCheckBoxClass().should(
       "contain",
       checkBox.NAMES.fileTitlePublic,
       checkBox.NAMES.fileTitlePrivate,
       checkBox.NAMES.fileTitleClassified,
       checkBox.NAMES.fileTitleGeneral
     );
-    cy.get(checkBox.LOCATORS.dropdownNearDownloads).click({
-      multiple: true,
-    });
-    cy.get(checkBox.LOCATORS.fileWord).should(
+
+    checkBox.dropdownIcon().eq(5).click();
+    checkBox.generalCheckBoxClass().should(
       "contain",
       checkBox.NAMES.fileTitleWord,
       checkBox.NAMES.fileTitleExcel
@@ -64,8 +63,8 @@ describe("DEMO QA Base Page", () => {
   });
 
   it("verifies ticking and unticking checkboxes", () => {
-    cy.get(checkBox.LOCATORS.expandAllButton).click();
-    cy.get(checkBox.LOCATORS.checkbox, { timeout: 10000 })
+    checkBox.expandAllButton().click();
+    checkBox.checkbox ({ timeout: 10000 })
       .should("exist")
       .each(($checkbox) => {
         cy.wrap($checkbox).should("not.be.checked"); // verifies all checkboxes are unchecked by default
