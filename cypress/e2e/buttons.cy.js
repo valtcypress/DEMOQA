@@ -6,9 +6,7 @@ describe("DEMO QA Buttons Page", () => {
   before(() => {
     cy.visit("/");
     cy.contains(basePage.NAMES.elementsCategoryCardTitle).click();
-    cy.get(checkBox.LOCATORS.listOfElements)
-      .contains(buttons.NAMES.buttonsOnPanel)
-      .click();
+    checkBox.listOfElements().contains(buttons.NAMES.buttonsOnPanel).click();
   });
 
   it("verifies three buttons and their functionalities on the page", () => {
@@ -30,7 +28,7 @@ describe("DEMO QA Buttons Page", () => {
       .rightClickMessage()
       .should("contain", buttons.NAMES.rightClickResultText);
 
-    cy.get(".btn-primary").last().click()
+    buttons.generalButtonClass().last().click();
     buttons.clickMessage().should("contain", buttons.NAMES.clickResultText);
   });
 });

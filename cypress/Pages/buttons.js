@@ -34,6 +34,9 @@ class Buttons {
   clickMessage() {
     return cy.get("#dynamicClickMessage");
   }
+  generalButtonClass() {
+    return cy.get(".btn-primary");
+  }
 }
 
 export const buttons = new Buttons();
