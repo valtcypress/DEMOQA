@@ -21,35 +21,41 @@ class CheckBox {
     fileTitleExcel: "Excel File.doc",
     selectedAllText:
       "You have selected :homedesktopnotescommandsdocumentsworkspacereactangularveuofficepublicprivateclassifiedgeneraldownloadswordFileexcelFile",
+    expandedClassName: "rct-node-expanded",
   };
 
-  listOfElements(){
-    return cy.get (".element-list")
+  listOfElements() {
+    return cy.get(".element-list");
   }
 
-  generalCheckBoxClass(){
-    return cy.get (".rct-title")
+  generalCheckBoxClass() {
+    return cy.get(".rct-title");
   }
 
-  dropdownIcon(){
-    return cy.get (".rct-collapse-btn")
+  dropdownIcon() {
+    return cy.get(".rct-collapse-btn");
   }
 
-  expandAllButton(){
-    return cy.get(".rct-option-expand-all")
+  expandAllButton() {
+    return cy.get(".rct-option-expand-all");
   }
-  checkbox(){
-return cy.get(".rct-checkbox")
+  checkbox() {
+    return cy.get(".rct-checkbox");
+  }
+  checkedIconState() {
+    return cy.get(".rct-icon-check");
   }
 
-  LOCATORS = {
-    
+  resultAfterCheckingAll() {
+    return cy.get("#result");
+  }
 
-    checkedIconState: ".rct-icon-check",
-    resultAfterCheckingAll: "#result",
-    collapseAllButton: ".rct-option-collapse-all",
-    expandedNodeState: "rct-node-expanded",
-  };
+  collapseAllButton() {
+    return cy.get(".rct-option-collapse-all");
+  }
+  nodeWholeClass() {
+    return cy.get(".rct-node");
+  }
 }
 
 export const checkBox = new CheckBox();
