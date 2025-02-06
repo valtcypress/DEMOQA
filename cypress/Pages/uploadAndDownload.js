@@ -4,13 +4,13 @@ class UploadAndDownload {
     downloadButtonTitle: "Download",
     fileName: "sampleFile.jpeg",
     uploadButtonTitle: "Choose File",
-    
+    attechedFileName1: "image (3).png",
+    attechedFileName2: "menu.pdf",
   };
 
   LOCATORS = {
-    downloadFileURL:
-      "data:image/jpeg",
-    downloadFolder: "C:\Users\Tatev\Downloads",
+    downloadFileURL: "https://demoqa.com/upload-download",
+    downloadFolder: "cypress/downloads",
   };
 
   downloadButton() {
@@ -22,9 +22,12 @@ class UploadAndDownload {
   }
 
   uploadButton() {
-    return cy.get('#uploadFile')
+    return cy.get("#uploadFile");
   }
 
+  uploadedFilePath() {
+    return cy.get("#uploadedFilePath");
+  }
 }
 
 export const uploadAndDownload = new UploadAndDownload();

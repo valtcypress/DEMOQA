@@ -12,20 +12,30 @@ describe("DEMO QA Upload and Download Page", () => {
   });
 
   it("downloads a file", () => {
-    uploadAndDownload.downloadButton().should("contain", uploadAndDownload.NAMES.downloadButtonTitle).click();
-    // cy.verifyDownload('sampleFile.jpeg')
-    
-    cy.downloadFile(uploadAndDownload.LOCATORS.downloadFileURL, uploadAndDownload.LOCATORS.downloadFolder, uploadAndDownload.NAMES.fileName);
-    // cy.readFile(`${downloadFolder}/${fileName}`)
-    // cy.readFile(uploadAndDownload.LOCATORS.downloadFolder, { timeout: 10000 }).should('exist');
-});
-
-  it.only("uploads a file", () => {
-    uploadAndDownload.uploadButton().should("contain", uploadAndDownload.NAMES.uploadButtonTitle);
-    uploadAndDownload.uploadButton().attachFile('exampleFile.pdf');
-
-    // Validate that the file was uploaded (depends on your app's specific response)
-    cy.get('.file-name').should('contain', 'exampleFile.pdf');
+    uploadAndDownload
+      .downloadButton()
+      .should("contain", uploadAndDownload.NAMES.downloadButtonTitle)
+      .click();
+    cy.downloadFile(
+      uploadAndDownload.LOCATORS.downloadFileURL,
+      uploadAndDownload.LOCATORS.downloadFolder,
+      uploadAndDownload.NAMES.fileName
+    );
   });
 
+  it("uploads a file", () => {
+    uploadAndDownload
+      .uploadButton()
+      .attachFile(uploadAndDownload.NAMES.attechedFileName1);
+    uploadAndDownload
+      .uploadedFilePath()
+      .should("contain", uploadAndDownload.NAMES.attechedFileName1);
+
+    uploadAndDownload
+      .uploadButton()
+      .attachFile(uploadAndDownload.NAMES.attechedFileName2);
+    uploadAndDownload
+      .uploadedFilePath()
+      .should("contain", uploadAndDownload.NAMES.attechedFileName2); //upload another file
+  });
 });

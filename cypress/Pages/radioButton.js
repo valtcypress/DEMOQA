@@ -7,15 +7,24 @@ class RadioButton {
     radioButtonNo: "No",
   };
 
-  LOCATORS = {
-    h1TitleRadioButton: ".text-center",
-    doYouLikeTheSite: ".mb-3",
-    radioButtonType: 'input[type="radio"]',
-    testAfterButtonCheck: ".text-success",
-    yourSelectedOption: ".mt-3",
-  };
-  h1TitleRadioButton(){
-    return cy.get(".text-center")
+  h1TitleRadioButton() {
+    return cy.get(".text-center");
+  }
+
+  doYouLikeTheSite() {
+    return cy.get(".mb-3");
+  }
+
+  radioButtonType() {
+    return cy.get('input[type="radio"]');
+  }
+
+  testAfterButtonCheck() {
+    return cy.get(".text-success");
+  }
+
+  yourSelectedOption() {
+    return cy.get(".mt-3");
   }
 }
 
